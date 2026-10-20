@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+    <title>Formulario</title>
+  </head>
+  <body>
+    <h1>FORMULARIO - CONTACTANOS</h1>
+    <div class="main-container">
+      <div class="subtitles-form">
+        <p>*Nombre</p>
+        <p>Email</p>
+        <p>Telefono</p>
+        <p>* Fecha</p>
+        <p>* Comentarios</p>
+      </div>
+      <div class="form-container">
+        <form
+          class="form"
+          action="loquesea.html"
+          id="formulariocomentarios"
+          name="formulariocomentarios"
+          method="get"
+        >
+          <input type="text" name="name" id="name" required />
+          <input type="email" name="Email" id="Email" />
+          <input
+            type="number"
+            name="number"
+            id="number"
+            placeholder="Ejem:9991234587"
+          />
+          <input type="date" name="date" id="date" required />
+          <textarea name="COmentarios" id="comentarios" required></textarea>
+          <button id="btn_validar" class="button" type="button">
+            Enviar comentario
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    $("#btn_validar").click(function () {
+      if ($("#name").val().trim() == "") {
+        alert("Escribe tu nombre");
+        $("#name").focus();
+        return 0;
+      }
+    });
+    $("#btn_validar").click(function () {
+      if ($("#date").val().trim() == "") {
+        alert("Escribe la fecha");
+        $("#date").focus();
+        return 0;
+      }
+    });
+    $("#btn_validar").click(function () {
+      if ($("#comentarios").val().trim() == "") {
+        alert("Escribe tus comentarios");
+        $("#comentarios").focus();
+        return 0;
+      }
+      $("#formulariocomentarios").submit();
+    });
+  </script>
+</html>
